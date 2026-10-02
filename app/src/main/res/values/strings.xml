@@ -33,4 +33,10 @@
     <string name="save">حفظ</string>
     <string name="share">مشاركة</string>
     <string name="recording_saved">تم حفظ التسجيل بنجاح</string>
+    <string name="action_preview">معاينة التسجيل الصوتي</string>
+    <string name="action_save_recording">حفظ التسجيل</string>
+    <string name="action_discard_recording">إلغاء وحذف التسجيل</string>
+    <string name="recording_discarded">تم إلغاء التسجيل</string>
+    <string name="recording_too_short">التسجيل قصير جداً</string>
+    <string name="preview_mode_desc">معاينة الصوت قبل الحفظ</string>
 </resources>

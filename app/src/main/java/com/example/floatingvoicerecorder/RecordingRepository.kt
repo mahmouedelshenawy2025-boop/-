@@ -37,6 +37,43 @@ class RecordingRepository private constructor(private val context: Context) {
         return File(recordingsDir, fileName)
     }
 
+    fun getTempRecordingFile(): File {
+        val tempDir = File(context.cacheDir, "temp_recordings")
+        if (!tempDir.exists()) {
+            tempDir.mkdirs()
+        }
+        return File(tempDir, "temp_rec_${System.currentTimeMillis()}.m4a")
+    }
+
+    fun saveTempRecording(tempFile: File?): File? {
+        if (tempFile == null || !tempFile.exists() || tempFile.length() == 0L) {
+            return null
+        }
+        val targetFile = getNewRecordingFile()
+        val success = tempFile.renameTo(targetFile) || try {
+            tempFile.copyTo(targetFile, overwrite = true)
+            tempFile.delete()
+            true
+        } catch (e: Exception) {
+            false
+        }
+        if (success) {
+            refreshRecordings()
+            return targetFile
+        }
+        return null
+    }
+
+    fun discardTempRecording(tempFile: File?) {
+        try {
+            if (tempFile != null && tempFile.exists()) {
+                tempFile.delete()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
     fun refreshRecordings() {
         val files = recordingsDir.listFiles { file ->
             file.isFile && (file.extension.equals("m4a", ignoreCase = true) ||

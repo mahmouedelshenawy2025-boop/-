@@ -7,18 +7,18 @@
     android:elevation="12dp"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="12dp"
+    android:paddingStart="10dp"
     android:paddingTop="6dp"
-    android:paddingEnd="12dp"
+    android:paddingEnd="10dp"
     android:paddingBottom="6dp">
 
     <!-- Drag Handle -->
     <ImageView
         android:id="@+id/btnDrag"
-        android:layout_width="28dp"
+        android:layout_width="26dp"
         android:layout_height="36dp"
         android:contentDescription="Drag Overlay"
-        android:padding="4dp"
+        android:padding="3dp"
         android:src="@drawable/ic_drag_handle" />
 
     <!-- Status Dot -->
@@ -26,7 +26,7 @@
         android:id="@+id/viewStatusIndicator"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="4dp"
         android:background="@drawable/bg_indicator_ready" />
 
     <!-- Timer / Status Text -->
@@ -34,44 +34,97 @@
         android:id="@+id/tvTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="00:00"
         android:textColor="#FFFFFFFF"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
 
-    <!-- Record / Pause Button -->
-    <ImageButton
-        android:id="@+id/btnRecordToggle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Record or Pause"
-        android:padding="8dp"
-        android:src="@drawable/ic_mic" />
+    <!-- Normal Recording Controls Group -->
+    <LinearLayout
+        android:id="@+id/layoutRecordingControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible">
 
-    <!-- Stop Button -->
-    <ImageButton
-        android:id="@+id/btnStop"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="2dp"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Stop Recording"
-        android:padding="8dp"
-        android:src="@drawable/ic_stop"
-        android:visibility="gone" />
+        <!-- Record / Pause Button -->
+        <ImageButton
+            android:id="@+id/btnRecordToggle"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Record or Pause"
+            android:padding="7dp"
+            android:src="@drawable/ic_mic" />
+
+        <!-- Stop / Finish Recording Button (Moves to Preview & Save) -->
+        <ImageButton
+            android:id="@+id/btnStop"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="2dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Stop Recording"
+            android:padding="7dp"
+            android:src="@drawable/ic_stop"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Preview & Save Controls Group (Shown after recording is stopped) -->
+    <LinearLayout
+        android:id="@+id/layoutPreviewControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <!-- Preview (Play/Pause) Button -->
+        <ImageButton
+            android:id="@+id/btnPreview"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/bg_circle_preview"
+            android:contentDescription="@string/action_preview"
+            android:padding="7dp"
+            android:src="@drawable/ic_play" />
+
+        <!-- Save Button -->
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_circle_save"
+            android:contentDescription="@string/action_save_recording"
+            android:padding="7dp"
+            android:src="@drawable/ic_save" />
+
+        <!-- Discard / Cancel Button -->
+        <ImageButton
+            android:id="@+id/btnDiscard"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_circle_discard"
+            android:contentDescription="@string/action_discard_recording"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete" />
+    </LinearLayout>
 
     <!-- Close Button -->
     <ImageButton
         android:id="@+id/btnClose"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
         android:layout_marginStart="4dp"
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:contentDescription="Close Overlay"
-        android:padding="8dp"
+        android:padding="7dp"
         android:src="@drawable/ic_close" />
 
 </LinearLayout>
