@@ -1,4 +1,4 @@
-name: Build & Package Android APK
+name: Build Android APK
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build APK
+    name: Build Debug APK
     runs-on: ubuntu-latest
 
     steps:
@@ -28,25 +28,30 @@ jobs:
 
       - name: Prepare Keystore & Environment
         run: |
+          # Ensure .env exists for Secrets Gradle Plugin
           touch .env
           if [ -f .env.example ]; then
             cp -n .env.example .env || true
           fi
           
+          # Restore or generate debug.keystore
           if [ -f debug.keystore.base64 ]; then
+            echo "Restoring debug.keystore from base64..."
             base64 -d debug.keystore.base64 > debug.keystore
           elif [ ! -f debug.keystore ]; then
+            echo "Generating new debug.keystore..."
             keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
           fi
           
+          # Ensure gradlew is executable
           chmod +x gradlew
 
-      - name: Build Debug APK
+      - name: Build with Gradle (assembleDebug)
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Upload APK Artifact
+      - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug
+          name: FloatingVoiceRecorder-Debug-APK
           path: app/build/outputs/apk/debug/*.apk
           retention-days: 14
