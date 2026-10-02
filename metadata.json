@@ -1,0 +1,6 @@
+{
+  "name": "Floating Voice Recorder",
+  "description": "Floating Voice Recorder with movable overlay window, background audio recording, and playback manager.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

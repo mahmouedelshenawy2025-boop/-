@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overlayRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_floating_overlay"
+    android:elevation="12dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingTop="6dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="6dp">
+
+    <!-- Drag Handle -->
+    <ImageView
+        android:id="@+id/btnDrag"
+        android:layout_width="28dp"
+        android:layout_height="36dp"
+        android:contentDescription="Drag Overlay"
+        android:padding="4dp"
+        android:src="@drawable/ic_drag_handle" />
+
+    <!-- Status Dot -->
+    <View
+        android:id="@+id/viewStatusIndicator"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/bg_indicator_ready" />
+
+    <!-- Timer / Status Text -->
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="00:00"
+        android:textColor="#FFFFFFFF"
+        android:textSize="15sp" />
+
+    <!-- Record / Pause Button -->
+    <ImageButton
+        android:id="@+id/btnRecordToggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Record or Pause"
+        android:padding="8dp"
+        android:src="@drawable/ic_mic" />
+
+    <!-- Stop Button -->
+    <ImageButton
+        android:id="@+id/btnStop"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Stop Recording"
+        android:padding="8dp"
+        android:src="@drawable/ic_stop"
+        android:visibility="gone" />
+
+    <!-- Close Button -->
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="4dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close Overlay"
+        android:padding="8dp"
+        android:src="@drawable/ic_close" />
+
+</LinearLayout>

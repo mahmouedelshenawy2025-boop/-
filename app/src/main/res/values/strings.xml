@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Floating Voice Recorder</string>
+    <string name="app_name_ar">مسجل الصوت العائم</string>
+    <string name="channel_name">خدمة التسجيل العائم</string>
+    <string name="channel_desc">إشعارات التحكم في مسجل الصوت العائم</string>
+    <string name="notif_title_recording">جاري التسجيل...</string>
+    <string name="notif_title_paused">التسجيل متوقف مؤقتاً</string>
+    <string name="notif_title_ready">المسجل العائم جاهز</string>
+    <string name="notif_desc">انقر لإدارة التسجيل أو فتح التطبيق</string>
+    <string name="action_stop">إيقاف وحفظ</string>
+    <string name="action_pause">إيقاف مؤقت</string>
+    <string name="action_resume">استئناف</string>
+    <string name="action_close">إغلاق</string>
+    <string name="perm_overlay_title">إذن الظهور فوق التطبيقات الأخرى</string>
+    <string name="perm_overlay_desc">مطلوب لعرض فقاعة التسجيل العائمة أثناء استخدام أي تطبيق آخر.</string>
+    <string name="perm_mic_title">إذن الميكروفون</string>
+    <string name="perm_mic_desc">مطلوب لتسجيل الصوت بدقة عالية.</string>
+    <string name="perm_notif_title">إذن الإشعارات</string>
+    <string name="perm_notif_desc">مطلوب للتحكم في التسجيل من شريط الإشعارات أثناء عمل الخدمة.</string>
+    <string name="grant_permission">منح الإذن</string>
+    <string name="permission_granted">مفعل ✓</string>
+    <string name="permission_missing">غير مفعل</string>
+    <string name="btn_start_floating">تشغيل المسجل العائم</string>
+    <string name="btn_stop_floating">إيقاف المسجل العائم</string>
+    <string name="quick_record_title">تسجيل صوتي فوري</string>
+    <string name="recordings_title">التسجيلات المحفوظة</string>
+    <string name="no_recordings">لا توجد تسجيلات صوتية بعد. ابدأ التسجيل الآن!</string>
+    <string name="delete_confirm_title">حذف التسجيل</string>
+    <string name="delete_confirm_msg">هل أنت متأكد من حذف هذا التسجيل الصوتي نهائياً؟</string>
+    <string name="delete">حذف</string>
+    <string name="cancel">إلغاء</string>
+    <string name="rename">إعادة تسمية</string>
+    <string name="save">حفظ</string>
+    <string name="share">مشاركة</string>
+    <string name="recording_saved">تم حفظ التسجيل بنجاح</string>
+</resources>
